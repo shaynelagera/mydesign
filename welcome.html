@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Welcome</title>
+        <link rel="stylesheet" href="style.css"
+    </head>
+    <body>
+        <div class="hey">    
+            <div class="back">
+                <button class="back-button2" onclick="goBack()">Back</button>
+            </div>
+                <div class="content">
+                    <h3>Hello <br><span>WELCOME</span></br>to our page!</h3>
+                    <p class="par">Enjoy Browsing... Thank you!!!</p>
+                        
+            </div>
+    
+            <div class="container">
+                <h4>Logout</h4>
+                <p>Are you sure you want to log out?</p>
+                <button id="logoutButton"><a href="login.html">Logout</a></button>
+            </div>
+        
+            <script src="logout.js"></script>
+        </div>
+
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+        </body>
+</html>

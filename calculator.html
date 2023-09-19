@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+
+</head>
+<body>
+ 
+    <style>
+        .calculator {
+            width: 250px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 5px solid #e96767;
+            border-radius: 20px;
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 88%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        input[type="button"] {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            margin: 5px;
+        }
+
+        .calc{
+            width: 100%;
+            background: url(bg1.jpg);
+            background-position: left;
+            background-size: cover;
+            height: 109vh;
+        }
+
+        .back-button1 {
+            background-color: #eb3461;
+            color: #f1f1f1;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Hover effect */
+        .back-button1:hover {
+             background-color: #e7f070;
+        }
+        
+    </style>
+</head>
+
+<body>
+    
+    <div class="calc">
+        <div class="back">
+            <button class="back-button1" onclick="goBack()">Back</button>
+        </div>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <table>
+            <tr>
+                <td><input type="button" value="1" onclick="addToDisplay('1')"></td>
+                <td><input type="button" value="2" onclick="addToDisplay('2')"></td>
+                <td><input type="button" value="3" onclick="addToDisplay('3')"></td>
+                <td><input type="button" value="+" onclick="addToDisplay('+')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="addToDisplay('4')"></td>
+                <td><input type="button" value="5" onclick="addToDisplay('5')"></td>
+                <td><input type="button" value="6" onclick="addToDisplay('6')"></td>
+                <td><input type="button" value="-" onclick="addToDisplay('-')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="addToDisplay('7')"></td>
+                <td><input type="button" value="8" onclick="addToDisplay('8')"></td>
+                <td><input type="button" value="9" onclick="addToDisplay('9')"></td>
+                <td><input type="button" value="*" onclick="addToDisplay('*')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="C" onclick="clearDisplay()"></td>
+                <td><input type="button" value="0" onclick="addToDisplay('0')"></td>
+                <td><input type="button" value="=" onclick="calculate()"></td>
+                <td><input type="button" value="/" onclick="addToDisplay('/')"></td>
+            </tr>
+        </table>
+    </div>
+    </div>
+    <script>
+        function addToDisplay(value) {
+            document.getElementById("display").value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById("display").value = "";
+        }
+
+        function calculate() {
+            try {
+                document.getElementById("display").value = eval(document.getElementById("display").value);
+            } catch (e) {
+                document.getElementById("display").value = "Error";
+            }
+        }
+    </script>
+    </script>
+
+    <script>
+   function goBack() {
+       window.history.back();
+   }
+</script>
+</body>
+</html>
